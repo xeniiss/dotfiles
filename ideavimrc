@@ -1,6 +1,3 @@
-set nocompatible
-filetype plugin on
-
 let mapleader=" "
 
 " Interface
@@ -46,7 +43,6 @@ set smarttab
 " Performance
 set lazyredraw
 
-
 " ============================================================================
 " MAPPINGS {{{
 " ============================================================================
@@ -75,49 +71,53 @@ nnoremap [b :bprev<cr>
 nnoremap ]t :tabn<cr>
 nnoremap [t :tabp<cr>
 
-" ============================================================================
+" ----------------------------------------------------------------------------
 " Plugins
-" ============================================================================
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
-
-" Make sure you use single quotes
-
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Plugin colorscheme
-Plug 'junegunn/seoul256.vim'
-
-" Plugin edit utils
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-
-" Plugin lang#go
-Plug 'fatih/vim-go'
-
-" Plugin Toolbar
-Plug 'majutsushi/tagbar'
-
-" Plugin Navigator
-Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
-
-" Plugin Completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Initialize plugin system
-call plug#end()
+" ----------------------------------------------------------------------------
+set surround
+set commentary
+set ideajoin
+set ideamarks
 
 " ----------------------------------------------------------------------------
-" Colorscheme
+" JetBrains
 " ----------------------------------------------------------------------------
-silent! colo seoul256
 
-" ----------------------------------------------------------------------------
-" vim-go
-" ----------------------------------------------------------------------------
-let g:go_test_timeout='20s'
-let g:go_fmt_command='goimports'
+
+" Edit
+nnoremap <leader>eq  :action CloseContent<cr>
+
+" Navigate
+nnoremap <leader>h  :action Back<cr>
+nnoremap <leader>l  :action Forward<cr>
+nnoremap <leader>su :action ShowUsages<cr>
+nnoremap <leader>fu :action FindUsages<cr>
+nnoremap <leader>gi :action GotoImplementation<cr>
+nnoremap <leader>gs :action GotoSuperMethod<cr>
+nnoremap <leader>gd :action GotoDeclaration<cr>
+nnoremap <leader>gt :action GotoTest<cr>
+nnoremap <leader>gr :action GotoRelated<cr>
+nnoremap ]e :action GotoNextError<cr>
+nnoremap [e :action GotoPreviousError<cr>
+
+" Find
+nnoremap <leader>ff :action FindInPath<cr>
+nnoremap <leader>cv :action ChangeView<cr>
+
+" Refactor
+nnoremap <leader>re :action RenameElement<cr>
+nnoremap <leader>rf :action RenameFile<cr>
+nnoremap <leader>gq :action ReformatCode<cr>
+
+" Build & Run
+nnoremap <leader>dd :action Debug<cr>
+nnoremap <leader>dc :action ChooseDebugConfiguration<cr>
+nnoremap <leader>rr :action Run<cr>
+nnoremap <leader>rc :action ChooseRunConfiguration<cr>
+
+" Tool
+nnoremap <leader><leader> :action SearchEverywhere<cr>
+nnoremap <leader>tl Vy<cr>:action ActivateTerminalToolWindow<cr>
+vnoremap <leader>tl y<cr>:action ActivateTerminalToolWindow<cr>
+nnoremap <leader>ga :action GotoAction<cr>
+
