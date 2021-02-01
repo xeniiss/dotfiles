@@ -19,13 +19,13 @@
             "command": "cmake-language-server",
             "filetypes": ["cmake"],
             "rootPatterns": [
-                "build/"
+                "cmake-build-debug/"
             ],
             "initializationOptions": {
-                "buildDirectory": "build"
+                "buildDirectory": "cmake-build-debug"
             }
         }
     },
     "http.proxyStrictSSL" : false,
-    "clangd.compiliationDatabasePath" : "_build"
+    "clangd.compilationDatabasePath" : "cmake-build-debug"
 }

@@ -108,6 +108,9 @@ Plug 'scrooloose/nerdtree'
 " Plugin Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Plugin git
+Plug 'tpope/vim-fugitive'
+
 " Initialize plugin system
 call plug#end()
 
