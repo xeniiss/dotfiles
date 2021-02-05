@@ -1,0 +1,23 @@
+[global_config]
+  focus = system
+  handle_size = 0
+  tab_position = bottom
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.8
+    background_type = transparent
+    font = Ubuntu Mono derivative Powerline 14
+    show_titlebar = False
+    scrollbar_position = hidden
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+      size = 1000, 600
+[plugins]
