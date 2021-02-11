@@ -27,5 +27,6 @@
         }
     },
     "http.proxyStrictSSL" : false,
+    "coc.preferences.formatOnSaveFiletypes": ["rust"],
     "clangd.compilationDatabasePath" : "cmake-build-debug"
 }
