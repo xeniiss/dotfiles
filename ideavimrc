@@ -114,6 +114,10 @@ nnoremap <leader>dd :action Debug<cr>
 nnoremap <leader>dc :action ChooseDebugConfiguration<cr>
 nnoremap <leader>rr :action Run<cr>
 nnoremap <leader>rc :action ChooseRunConfiguration<cr>
+nnoremap <leader>bp :action ToggleLineBreakpoint<cr>
+
+" CMake
+nnoremap <leader>cr :action CMake.ReloadCMakeProject<cr>
 
 " Tool
 nnoremap <leader><leader> :action SearchEverywhere<cr>
