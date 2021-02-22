@@ -55,7 +55,13 @@ set lazyredraw
 " ----------------------------------------------------------------------------
 " Basic mappings
 " ----------------------------------------------------------------------------
-nnoremap <leader>n :execute 'NERDTreeToggle'<cr>
+nnoremap <leader>nt :execute 'NERDTreeToggle'<cr>
+nnoremap <leader>nf :execute 'NERDTreeFocus'<cr>
+nnoremap <leader>nc :execute 'NERDTreeClose'<cr>
+
+nnoremap <leader>ff :execute 'Files'<cr>
+nnoremap <leader>fw :execute 'Windows'<cr>
+nnoremap <leader>fb :execute 'Buffers'<cr>
 
 " ----------------------------------------------------------------------------
 " Quickfix
@@ -104,6 +110,7 @@ Plug 'tpope/vim-commentary'
 
 " Plugin lang#go
 Plug 'fatih/vim-go'
+Plug 'buoto/gotests-vim'
 
 " Plugin lang#rust
 Plug 'rust-lang/rust.vim'
