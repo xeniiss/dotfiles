@@ -53,7 +53,7 @@ set lazyredraw
 " ============================================================================
 
 " ----------------------------------------------------------------------------
-" Basic mappings
+" Plugin mappings
 " ----------------------------------------------------------------------------
 nnoremap <leader>nt :execute 'NERDTreeToggle'<cr>
 nnoremap <leader>nf :execute 'NERDTreeFocus'<cr>
@@ -62,6 +62,11 @@ nnoremap <leader>nc :execute 'NERDTreeClose'<cr>
 nnoremap <leader>ff :execute 'Files'<cr>
 nnoremap <leader>fw :execute 'Windows'<cr>
 nnoremap <leader>fb :execute 'Buffers'<cr>
+
+nmap <silent> <leader>gd <Plug>(coc-definition)
+nmap <silent> <leader>gy <Plug>(coc-type-definition)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <silent> <leader>gr <Plug>(coc-references)
 
 " ----------------------------------------------------------------------------
 " Quickfix
