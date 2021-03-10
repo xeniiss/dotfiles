@@ -139,6 +139,10 @@ Plug 'vimwiki/vimwiki', {'branch' : 'dev'}
 " Plugin startify
 Plug 'mhinz/vim-startify'
 
+" Plugin airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 " Initialize plugin system
 call plug#end()
 
@@ -241,3 +245,12 @@ let g:startify_lists = [
       \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      }, 
       \ { 'type': 'commands',  'header': ['   Commands']       }, 
       \ ]                                                         
+
+" ----------------------------------------------------------------------------
+" airline
+" ----------------------------------------------------------------------------
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_powerline_fonts = 1
