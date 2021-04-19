@@ -110,3 +110,5 @@ alias vim="nvim"
 alias vi="nvim"
 alias vimdiff="nvim -d"
 export EDITOR=/usr/bin/nvim
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
