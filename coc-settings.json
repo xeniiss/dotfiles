@@ -5,16 +5,7 @@
             "rootPatterns" : ["go.mod"],
             "trace.server": "verbose",
             "filetypes" : ["go"]
-        }
-    },
-    "languageserver": {
-        "clangd": {
-            "command": "clangd",
-            "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
-            "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
-        }
-    },
-    "languageserver": {
+        },
         "cmake": {
             "command": "cmake-language-server",
             "filetypes": ["cmake"],
