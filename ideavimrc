@@ -78,7 +78,11 @@ set surround
 set commentary
 set ideajoin
 set ideamarks
+set NERDTree
 set keep-english-in-normal-and-restore-in-insert
+
+" NERDTree
+nnoremap <leader>nt  :NERDTreeToggle<cr>
 
 " ----------------------------------------------------------------------------
 " JetBrains
