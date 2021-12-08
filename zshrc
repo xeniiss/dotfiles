@@ -72,6 +72,8 @@ plugins=(git
   zsh-syntax-highlighting
   zsh-autosuggestions
   zsh-completions
+  docker
+  docker-compose
 )
 fpath+=~/.zfunc
 
