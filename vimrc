@@ -22,7 +22,7 @@ set listchars=tab:\|\ ,
 
 " Options
 set hidden
-set clipboard=unnamed
+set clipboard=unnamedplus
 set backspace=indent,eol,start
 set autoread
 set encoding=utf-8
