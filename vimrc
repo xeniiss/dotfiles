@@ -146,6 +146,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Plugin ultisnips
 Plug 'SirVer/ultisnips'
 
+" Plugin vim-snippets
+Plug 'honza/vim-snippets'
+
 " Initialize plugin system
 call plug#end()
 
