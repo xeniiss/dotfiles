@@ -1,8 +1,10 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.node_modules/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+export SDCV_PAGER=less
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -111,6 +113,15 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 alias vi="nvim"
 alias vimdiff="nvim -d"
+alias aws="aws --ca-bundle ~/DigitalCity.crt"
+alias ll="exa -l -a --git --icons -g"
 export EDITOR=/usr/bin/nvim
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source set_proxy
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
+
+bashcompinit
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

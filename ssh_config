@@ -1,0 +1,203 @@
+# Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+# Jump box with public IP address
+Host first-bastion
+    HostName 54.180.54.204
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev-bastion.pem
+
+Host devtools-api
+    HostName 172.31.26.155
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+Host galaxy-call
+    HostName 15.165.22.6
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+Host b2b-dev-tokyo
+    HostName 35.72.233.17
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+Host admin-dev-tokyo
+    HostName 192.30.11.110
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev.pem
+    ProxyCommand ssh -q -W %h:%p b2b-dev-tokyo
+
+Host kamailio-ptt-dev-tokyo
+    HostName 192.50.0.165
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev.pem
+    ProxyCommand ssh -q -W %h:%p ptt-dev-tokyo
+
+Host ptt-dev-tokyo
+    HostName 13.114.80.72
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+Host ptt-dev-tokyo-jenkins
+    HostName 18.182.146.40
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+Host ptt-stg-apne2-ptt-v0
+    HostName 15.164.71.126
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-stg-ane2d-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+Host ptt-stg-ec1-ptt-v0
+    HostName 3.68.7.218
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-stg-ec1-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+Host ptt-dev-apne2-cross-region
+    HostName 3.37.14.234
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+Host ptt-dev-apne2-cross-region-jenkins
+    HostName 15.164.18.91
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+Host ptt-dev-apse1-cross-region
+    HostName 18.138.13.176
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+Host ptt-dev-apse1-cross-region-jenkins
+    HostName 13.213.98.17
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+
+Host cmc-dev-cn
+    HostName 54.222.220.203
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev-cn-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+Host cmc-dev-frankfrut
+    HostName 18.184.240.231
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev-ff-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+Host cmc-dev-singapole
+    HostName 13.228.41.2
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+Host cmc-dev-seoul
+    HostName 13.125.76.160
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+Host pcscfa-cmc-dev-seoul
+    HostName 10.0.0.12
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev.pem
+    ProxyCommand ssh -q -W %h:%p cmc-dev-seoul
+
+Host pcscfc-cmc-dev-seoul
+    HostName 10.0.11.223
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev.pem
+    ProxyCommand ssh -q -W %h:%p cmc-dev-seoul
+
+Host cmc-dev-seoul-jenkins
+    HostName 15.165.138.41
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev.pem
+    ProxyCommand ssh -q -W %h:%p cmc-dev-seoul
+
+Host scscf-cmc-dev-seoul-a
+    HostName 10.0.10.12
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev.pem
+    ProxyCommand ssh -q -W %h:%p cmc-dev-seoul
+
+Host scscf-cmc-dev-seoul-b
+    HostName 10.0.11.12
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev.pem
+    ProxyCommand ssh -q -W %h:%p cmc-dev-seoul
+
+Host cmc-stg-jyng
+    HostName 13.209.158.40
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-stg-ane2d-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+
+# Target machines
+Host cmc-stg-jyng-jenkins
+    HostName 52.78.192.155
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-stg-ane2d-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+# Target machines
+Host cmc-stg-tokyo
+    HostName 18.182.129.88
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-stg-ane2d-bastion.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion
+
+
+# Target machines
+Host cmc-stg-jyng-kafka
+    HostName 10.0.10.240
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-stg-ane2s.pem
+    ProxyCommand ssh -q -W %h:%p stg-jyng
+
+# Target machines
+Host cmc-stg-jyng-lbs1
+    HostName 10.0.10.110
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-stg-ane2s.pem
+    ProxyCommand ssh -q -W %h:%p stg-jyng
+
+# Target machines
+Host cmc-stg-jyng-lbs2
+    HostName 10.0.11.110
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-stg-ane2s.pem
+    ProxyCommand ssh -q -W %h:%p stg-jyng
+
+# Target machines
+Host cmc-stg-jyng-lbs3
+    HostName 10.0.12.110
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-stg-ane2s.pem
+    ProxyCommand ssh -q -W %h:%p stg-jyng
+
+# Target machines
+Host cmc-stg-tokyo-lbs1
+    HostName 10.0.10.20
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-stg-ane2d.pem
+    ProxyCommand ssh -q -W %h:%p stg-tokyo
+
+# Target machines
+Host cmc-test-clients
+    HostName 18.140.158.230
+    User ubuntu
+    IdentityFile ~/PrvKeys/mdc-dev.pem
+    ProxyCommand ssh -q -W %h:%p first-bastion

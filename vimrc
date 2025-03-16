@@ -108,6 +108,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Plugin colorscheme
 Plug 'junegunn/seoul256.vim'
+Plug 'morhetz/gruvbox'
 
 " Plugin edit utils
 Plug 'tpope/vim-surround'
@@ -155,7 +156,7 @@ call plug#end()
 " ----------------------------------------------------------------------------
 " Colorscheme
 " ----------------------------------------------------------------------------
-silent! colo seoul256
+silent! colo gruvbox
 
 " ----------------------------------------------------------------------------
 " vim-go
